@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Docker') {
             steps {
-                sh 'docker build -t springboot-app .'
+                bat 'docker build -t springboot-app .'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
+                bat 'kubectl apply -f deployment.yaml'
             }
         }
     }
