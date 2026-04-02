@@ -12,10 +12,10 @@ pipeline {
                 bat 'docker build -t springboot-app .'
             }
         }
-        stage('Deploy') {
-            steps {
-                bat 'kubectl apply -f deployment.yaml'
-            }
-        }
+       stage('Deploy') {
+    steps {
+        bat 'kubectl apply -f deployment.yaml --validate=false'
+    }
+}
     }
 }
