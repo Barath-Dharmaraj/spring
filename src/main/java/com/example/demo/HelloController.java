@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "App Running";
+        return "Webhook Working";
     }
 }
